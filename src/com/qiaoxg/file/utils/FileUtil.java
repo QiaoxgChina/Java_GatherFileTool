@@ -30,6 +30,12 @@ public class FileUtil {
 			return null;
 		}
 
+		if (!path.endsWith(File.separator)) {
+			path = path + File.separator;
+		}
+		
+		System.err.println("输入的路径是： " + path);
+		
 		File dirFile = new File(path);
 		if (!dirFile.isDirectory()) {
 			System.err.println("输入的路径不是文件夹");
